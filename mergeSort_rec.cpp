@@ -12,11 +12,11 @@ void merge(int arr[], int s, int e){
     int mainArrayIndex = s;
     // copy values
     for(int i =0;i<len1;i++){
-        first[i] = arr[mainArrayIndex];
+        first[i] = arr[mainArrayIndex++];
     }
     mainArrayIndex = mid+1;
     for(int i =0;i<len2;i++){
-        second[i] = arr[mainArrayIndex];
+        second[i] = arr[mainArrayIndex++];
     }
 
     // merge 2 sorted arrays
@@ -33,7 +33,7 @@ void merge(int arr[], int s, int e){
     }
 
     while(index1 < len1){
-        arr[mainArrayIndex++] = first[index1];
+        arr[mainArrayIndex++] = first[index1++];
     }
     while(index2 < len2){
         arr[mainArrayIndex++] = second[index2++];
@@ -56,15 +56,16 @@ void mergeSort(int arr[], int s, int e){
     mergeSort(arr,mid+1, e);
 
     merge(arr,s,e);
-    for(int i=0;i<=n;i++){
-        cout<<arr[i]<<" ";
-    }
+
 }
 
 int main(){
     int arr[5] = {2,5,1,6,9};
     int n = 5;
     mergeSort(arr,0,n-1);
+        for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
 
 
 
