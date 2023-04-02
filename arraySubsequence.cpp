@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<bits/stdc++.h>
 using namespace std;
 
 void solve(vector<int> nums, vector<int> output, int index, vector<vector<int>>& ans){
@@ -33,9 +34,11 @@ int main(){
 
 
     vector<vector<int>> anss = subsets(vect);
-    for(vector<int> x : anss)
-    cout<<x<<" ";
-
+       for (int i = 0; i < 9; i++) { // printing the 2D vector.
+      for (int j = 0; j < anss[i].size(); j++)
+      cout << anss[i][j] << " ";
+      cout << endl;
+       }
 
     return 0;
 }
